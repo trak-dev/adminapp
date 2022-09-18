@@ -26,7 +26,7 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  confirm(userId: string) {
+  confirm(userId: number) {
       this._confirmation.confirm({
         message: 'Etes vous sur de vouloir supprimer cet utilisateur ?',
         accept: () => {
@@ -35,10 +35,10 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  async deleteUser(userId: string) {
+  async deleteUser(userId: number) {
     try {
       await this._account.deleteUser(userId);
-      this.users = this.users.filter(user => user.id !== parseInt(userId));
+      this.users = this.users.filter(user => user.id !== userId);
       this._toaster.success('Utilisateur supprimé', 'Succès');
     } catch (error) {
       console.error(error);
@@ -46,11 +46,11 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  async setAdmin(userId: string) {
+  async setAdmin(userId: number) {
     try {
       await this._account.setAdmin(userId);
       this.users = this.users.map(user => {
-        if (user.id === parseInt(userId)) {
+        if (user.id === userId) {
           user.isadmin = !user.isadmin;
         }
         return user;

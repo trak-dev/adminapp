@@ -22,6 +22,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
+import { UserIdToUserPipe } from './pipes/user-id-to-user.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ConfirmationService } from 'primeng/api';
     HomeComponent,
     UsersComponent,
     OrdersComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserIdToUserPipe
   ],
   imports: [
     BrowserModule,

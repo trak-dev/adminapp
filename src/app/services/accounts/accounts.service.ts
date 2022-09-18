@@ -38,7 +38,7 @@ export class AccountsService {
     }
   }
 
-  async deleteUser(userId: string) {
+  async deleteUser(userId: number) {
     try {
       await this._http.delete(`${this._global.base_url}/users/${userId}`, {headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -49,12 +49,24 @@ export class AccountsService {
     }
   }
 
-  async setAdmin(userId: string) {
+  async setAdmin(userId: number) {
     try {
       await this._http.patch(`${this._global.base_url}/users/${userId}/toggle-admin`, {}, {headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem("token")}`
       })}).toPromise();
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async getUserById(userId: number) {
+    try {
+      const user = await this._http.get(`${this._global.base_url}/users/${userId}`, {headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem("token")}`
+      })}).toPromise() as UserModel;
+      return user;
     } catch (error) {
       throw error;
     }
