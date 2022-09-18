@@ -1,0 +1,22 @@
+<div class="whole">
+    <div class="grid p-fluid login-box bg-primary-reverse p-2">
+
+        <h1>Connexion</h1>
+
+        <h5>Addresse email</h5>
+
+        <div class="md:col-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-at"></i></span>
+                <input type="text" pInputText placeholder="Email" [(ngModel)]="email">         
+            </div>
+        </div>
+
+        <h5>Mot de passe</h5>
+
+        <p-password [(ngModel)]="password" [toggleMask]="true" placeholder="Mot de passe" [feedback]="false"></p-password>
+
+        <button pButton pRipple type="button" label="Se connecter" class="p-button-rounded mt-5" (click)="login()"></button>
+    </div>  
+    <p class="text-300">Attention ! cette plateforme est réservée aux administrateurs, vous n'y aurez pas accès sans le bon compte.</p>
+</div>
