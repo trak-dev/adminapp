@@ -1,3 +1,4 @@
+import { ItemsComponent } from './pages/items/items.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: "home", component: HomeComponent, canActivate: [AuthGuardService] },
   { path: "users", component: UsersComponent, canActivate: [AuthGuardService] },
   { path: "orders", component: OrdersComponent, canActivate: [AuthGuardService] },
+  { path: "items", component: ItemsComponent, canActivate: [AuthGuardService] },
 ];
 
 @NgModule({

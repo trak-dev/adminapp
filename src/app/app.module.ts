@@ -23,6 +23,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { UserIdToUserPipe } from './pipes/user-id-to-user.pipe';
+import { ItemsComponent } from './pages/items/items.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UserIdToUserPipe } from './pipes/user-id-to-user.pipe';
     UsersComponent,
     OrdersComponent,
     NavbarComponent,
-    UserIdToUserPipe
+    UserIdToUserPipe,
+    ItemsComponent
   ],
   imports: [
     BrowserModule,
